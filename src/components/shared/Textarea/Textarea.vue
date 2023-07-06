@@ -46,7 +46,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .textarea {
   border: 1px solid transparent;
   @apply border-borderLightest;
