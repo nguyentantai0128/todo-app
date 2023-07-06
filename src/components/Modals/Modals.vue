@@ -6,6 +6,7 @@
       :width="700"
       :component="IssueCreate"
     />
+
     <Modal
       v-if="isIssueSearchOpen"
       @close="isIssueSearchOpen = false"
@@ -21,6 +22,7 @@
       :component="IssueDetails"
       :componentProps="{ issueId }"
     />
+    
     <Modal
       v-if="isIssueDeleteOpen"
       @confirm="confirmIssueDelete"
@@ -51,9 +53,7 @@ export default defineComponent({
     const isIssueSearchOpen = ref<boolean>(false)
     const isIssueDetailsOpen = ref<boolean>(false)
     const isIssueDeleteOpen = ref<boolean>(false)
-    const isCommentDeleteOpen = ref<boolean>(false)
     const issueId = ref<string>(false)
-    const commentId = ref<string>(false)
 
     eventBus.$on(
       'toggle-issue-details',
@@ -73,27 +73,12 @@ export default defineComponent({
     eventBus.$on('toggle-issue-delete', (isOpen: boolean) => {
       isIssueDeleteOpen.value = isOpen
     })
-    eventBus.$on(
-      'toggle-comment-delete',
-      (isOpen: boolean, id: string | number) => {
-        if (isOpen) {
-          commentId.value = `${id}`
-        }
-        isCommentDeleteOpen.value = isOpen
-      }
-    )
 
     const issueDeleteProps = {
       title: 'Are you sure you want to delete this issue?',
       message: "Once you delete, it's gone for good.",
       confirmText: 'Delete issue',
       variant: 'dancer'
-    }
-    const commentDeleteProps = {
-      title: 'Are you sure you want to delete this comment?',
-      message: "Once you delete, it's gone for good.",
-      confirmText: 'Delete comment',
-      variant: 'primary'
     }
 
     const confirmIssueDelete = () => {
@@ -109,9 +94,7 @@ export default defineComponent({
       isIssueSearchOpen,
       isIssueDetailsOpen,
       isIssueDeleteOpen,
-      isCommentDeleteOpen,
       issueDeleteProps,
-      commentDeleteProps,
       confirmIssueDelete,
       issueId
     }
