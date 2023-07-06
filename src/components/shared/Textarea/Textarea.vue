@@ -54,10 +54,11 @@ export default defineComponent({
 .textarea:hover:not(:focus) {
   @apply bg-backgroundLight;
 }
-.textarea:focus {
+textarea:focus {
   @apply bg-white border border-borderInputFocus;
   box-shadow: 0 0 0 1px #42b884;
   border-color: #42b884 !important;
+  outline: none !important;
 }
 </style>
 <style lang="scss" scoped>
