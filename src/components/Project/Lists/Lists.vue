@@ -45,7 +45,7 @@ export default defineComponent({
           d,
           s,
           issueId
-        )
+        ) 
       }
 
       const issues = updateArrayItemById(

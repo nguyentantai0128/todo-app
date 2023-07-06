@@ -115,9 +115,7 @@ export const calculateIssueListPosition = (
   } else if (!nextIssue) {
     position = prevIssue.listPosition + 1
   } else {
-    position =
-      prevIssue.listPosition +
-      (nextIssue.listPosition - prevIssue.listPosition) / 2
+    position = prevIssue.listPosition + (nextIssue.listPosition - prevIssue.listPosition) / 2;
   }
   return position
 }

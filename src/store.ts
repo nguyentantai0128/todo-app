@@ -9,14 +9,25 @@ const store = Vue.observable({
       {
         id: '1ljqk7qh4',
         type: 'story',
-        title: 'APP TO DO',
+        title: 'Task 01',
         description: '<p>App Todo</p>',
         priority: '1',
         createdAt: new Date('2023-07-06T03:00:15.826Z'),
         updatedAt: null,
-        status: 'done',
+        status: 'backlog',
+        listPosition: 0
+      },
+      {
+        id: '1ljqk7qh5',
+        type: 'task',
+        title: 'Task 02',
+        description: '<p>App Todo</p>',
+        priority: '1',
+        createdAt: new Date('2023-07-06T03:00:15.826Z'),
+        updatedAt: null,
+        status: 'backlog',
         listPosition: 1
-      } as Issue
+      }
     ] as Issue[]
   } as Project,
   filters: {

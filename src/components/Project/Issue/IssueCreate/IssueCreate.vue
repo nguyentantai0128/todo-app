@@ -126,7 +126,7 @@ import Issue, {
 } from '@/types/issue'
 import { issuePriorityColors } from '@/utils/colors'
 import { successToast } from '../../../../plugins/toast'
-import { getters } from '@/store'
+import { getters, mutations } from '@/store'
 import uniqid from 'uniqid'
 
 type fieldType = 'type' | 'title' | 'description' | 'priority' | 'status'
@@ -171,7 +171,14 @@ export default defineComponent({
       }
       try {
         // Save Data
-        project.value.issues.push(issue)
+        const data = [...project.value.issues]
+        data.push(issue)
+        // optimistic update
+        const issueTmp = {
+          ...project.value,
+          issues:data
+        }
+        mutations.setProject(issueTmp)
         localStorage.setItem('project', JSON.stringify(project.value))
 
         loading.value = false
