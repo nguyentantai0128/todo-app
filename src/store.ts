@@ -3,7 +3,7 @@ import { Filters, Issue, Project } from '@/types'
 
 const store = Vue.observable({
   project: {
-    name: 'Demo Project',
+    name: 'Demo',
     category: 'software',
     issues: [
       { 

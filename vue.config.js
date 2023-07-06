@@ -4,5 +4,8 @@ module.exports = {
     optimization: {
       runtimeChunk: 'single'
     }
-  }
+  },
+  devServer: {
+    host: 'localhost',
+  },
 }
