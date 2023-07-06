@@ -6,15 +6,15 @@ const store = Vue.observable({
     name: 'Demo',
     category: 'software',
     issues: [
-      { 
-        id: "1ljqk7qh4", 
-        type: "story",
-        title: "APP TO DO",
-        description: "<p>App Todo</p>", 
-        priority: "1",
-        createdAt: new Date("2023-07-06T03:00:15.826Z"), 
+      {
+        id: '1ljqk7qh4',
+        type: 'story',
+        title: 'APP TO DO',
+        description: '<p>App Todo</p>',
+        priority: '1',
+        createdAt: new Date('2023-07-06T03:00:15.826Z'),
         updatedAt: null,
-        status: "done",
+        status: 'done',
         listPosition: 1
       } as Issue
     ] as Issue[]

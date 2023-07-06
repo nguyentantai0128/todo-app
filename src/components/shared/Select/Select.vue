@@ -188,7 +188,7 @@ export default defineComponent({
     const isControlled = computed(() => props.value != undefined) as any
 
     const localValue = computed(() =>
-      isControlled.value  ? props.value : stateValue.value
+      isControlled.value ? props.value : stateValue.value
     ) as any
 
     const preserveValueType = (
@@ -209,18 +209,14 @@ export default defineComponent({
       return newValue
     }
 
-    const handleChange = (
-      newValue: any
-    ) => {
+    const handleChange = (newValue: any) => {
       if (!isControlled.value) {
         stateValue.value = preserveValueType(newValue)
       }
       emit('change', preserveValueType(newValue))
     }
 
-    const removeOptionValue = (
-      optionValue: any
-    ) => {
+    const removeOptionValue = (optionValue: any) => {
       handleChange(
         (localValue.value as [string | number]).filter(
           val => val !== optionValue

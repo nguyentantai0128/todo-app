@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css'
 import tippy, { Placement, ReferenceElement } from 'tippy.js'
 
 Vue.directive('tippy', {
-  bind: function(el:any, bind:any) {
+  bind: function(el: any, bind: any) {
     const { value } = bind
     let offset = [0, 20],
       content = '',
