@@ -25,7 +25,7 @@
       <template v-slot:default="{ label }">
         <j-button
           class="uppercase text-textMedium text-13"
-          :variant="issueStatusVariants[projectFilters.status]"
+          :variant="issueStatusVariants['inprogress']"
         >
           {{ label }}
         </j-button>

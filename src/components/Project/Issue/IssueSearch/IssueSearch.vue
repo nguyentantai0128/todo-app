@@ -32,7 +32,6 @@
         class="pt-10 flex flex-col justify-center items-center"
         v-if="!isSearchTermEmpty && matchingIssues.length === 0"
       >
-        <j-icon :size="125" name="no-result"></j-icon>
         <div class="pt-8 font-medium text-xl">
           We couldn&apos;t find anything matching your search
         </div>
