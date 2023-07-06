@@ -185,11 +185,11 @@ export default defineComponent({
     ) => {
       return (getOption(optionValue) || { label: '' }).label
     }
-    const isControlled = computed(() => props.value != undefined)
+    const isControlled = computed(() => props.value != undefined) as any
 
     const localValue = computed(() =>
-      isControlled.value ? props.value : stateValue.value
-    )
+      isControlled.value  ? props.value : stateValue.value
+    ) as any
 
     const preserveValueType = (
       newValue: string | number | Array<number | string>
@@ -210,7 +210,7 @@ export default defineComponent({
     }
 
     const handleChange = (
-      newValue: string | number | Array<number | string>
+      newValue: any
     ) => {
       if (!isControlled.value) {
         stateValue.value = preserveValueType(newValue)
@@ -219,7 +219,7 @@ export default defineComponent({
     }
 
     const removeOptionValue = (
-      optionValue: string | number | Array<number | string>
+      optionValue: any
     ) => {
       handleChange(
         (localValue.value as [string | number]).filter(
@@ -259,7 +259,7 @@ export default defineComponent({
       // eslint-disable-next-line
       props.searchable && (dropdownRef.value as any).$refs.inputRef.focus()
     }
-    const handleSearchValueChange = (newValue: string) => {
+    const handleSearchValueChange = (newValue: any) => {
       searchValue.value = newValue
     }
 

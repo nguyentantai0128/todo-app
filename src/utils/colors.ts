@@ -34,5 +34,5 @@ export const issueStatusVariants = {
 export const issuePriorityColors = {
   [IssuePriority.HIGH]: '#E9494A',
   [IssuePriority.MEDIUM]: '#E97F33',
-  [IssuePriority.LOW]: '#2D8738',
+  [IssuePriority.LOW]: '#2D8738'
 }

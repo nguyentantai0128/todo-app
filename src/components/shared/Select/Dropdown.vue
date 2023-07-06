@@ -51,7 +51,7 @@ const activeOptionClass = 'select-option-is-active'
 
 interface Option {
   label: string
-  value: number | string
+  value: any
 }
 
 export default defineComponent({
@@ -299,16 +299,6 @@ export default defineComponent({
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  // &::-webkit-scrollbar {
-  //   width: 7px;
-  // }
-  // &::-webkit-scrollbar-track {
-  //   background: none;
-  // }
-  // &::-webkit-scrollbar-thumb {
-  //   // border-radius: 99px;
-  //   background: #d1d1d1;
-  // }
 }
 
 .option {
