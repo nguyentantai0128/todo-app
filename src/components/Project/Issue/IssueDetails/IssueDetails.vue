@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full">
-    <div class="flex items-center px-3 pt-4 text-textDarkest">
+    <div class="md:flex items-center px-3 pt-4 text-textDarkest">
       <!-- Type -->
       <IssueType
         :updateIssue="handleUpdateIssue"
